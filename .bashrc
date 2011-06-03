@@ -18,11 +18,23 @@ fi
 # Display the real path for pwd
 alias pwd2="cd \`readlink -f .\`"
 alias d="ls -h "
-alias ls="ls -hF" # normal color
-alias ll="ls -l -h" # put directories first
-alias la="ls -a -h" # show hidden files
-alias lal="ls -a -l -h"
-alias lrt="ls -lrt" # show last recently used
+
+if [ $(uname) == "Linux" ]; then
+	alias ls="ls -hF --color" # normal color
+	alias ll="ls -l -h --color" # put directories first
+	alias la="ls -a -h --color" # show hidden files
+	alias lal="ls -a -l -h --color"
+	alias lrt="ls -lrt --color" # show last recently used
+	alias grep="grep --color"
+else
+	alias ls="ls -hF" # normal color
+	alias ll="ls -l -h" # put directories first
+	alias la="ls -a -h" # show hidden files
+	alias lal="ls -a -l -h"
+	alias lrt="ls -lrt" # show last recently used
+	alias grep="grep"
+fi
+
 alias tree="tree -Csu" # See file tree
 alias c="clear"
 alias h="history"
@@ -37,7 +49,6 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../../"
 alias path='echo -e ${PATH//:/\\n}'
-alias grep="grep"
 alias rgrep="find . -name "*" | xargs grep"
 # cd then ls
 function cd {
