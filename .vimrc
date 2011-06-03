@@ -30,6 +30,7 @@ map <leader>f :MRU<CR>
 " Plugin: Fugitive
 " ----------------
 nmap <leader>gs :Gstatus<cr>
+" Then use "-" to stage it
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>ga :Gwrite<cr>
 nmap <leader>gl :Glog<cr>
@@ -49,11 +50,9 @@ map <leader><tab> :Sscratch<cr>
 
 " Plugin: Command-t
 " -----------------
-"  TODO: Not working
-" let g:CommandTMaxHeight = 15
-" set wildignore+=*.o,*.obj,.git,*.pyc
-" noremap <leader>j :CommandT<cr>
-" noremap <leader>y :CommandTFlush<cr>
+" ,t starts command t
+let g:CommandTMaxHeight = 15
+set wildignore+=*.o,*.obj,.git,*.pyc
 
 " Plugin: Slime
 " -------------
