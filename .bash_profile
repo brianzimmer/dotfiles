@@ -2,10 +2,6 @@
 # Brian Zimmer, bmzimmer@eecs.berkeley.edu
 
 
-# Load bashrc as well to get the rest of my settings
-if [ -f ~/.bashrc ]; then
-        . ~/.bashrc
-fi
 
 
 # Paths (not in bashrc, only want to set once)
@@ -29,6 +25,9 @@ export CLICOLOR=1
 #export PATH=$STOW_ROOT/riscv/bin:$STOW_PREFIX/bin:$PATH
 #export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
-if [ -f /opt/local/etc/bash_completion ]; then
-	      . /opt/local/etc/bash_completion
+
+# Load bashrc as well to get the rest of my settings
+# Must be at the bottom so bash completion loaded after paths
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
 fi

@@ -113,3 +113,7 @@ bind 'set completion-ignore-case on'
 # Turn off that stupid bell
 bind "set bell-style none"
 bind "set show-all-if-ambiguous on"
+
+if [ -f ~/dotfiles/bashcompletion/bash_completion ]; then
+			. ~/dotfiles/bashcompletion/bash_completion
+fi
