@@ -8,7 +8,6 @@ if [ -f ~/.bashrc ]; then
 fi
 
 
-
 # Paths (not in bashrc, only want to set once)
 # -------
 # matlab
@@ -28,4 +27,8 @@ export CLICOLOR=1
 #export STOW_ROOT="/home/aa/grad/bmzimmer/install"
 #export STOW_PREFIX="${STOW_ROOT}/${STOW_ARCH}"
 #export PATH=$STOW_ROOT/riscv/bin:$STOW_PREFIX/bin:$PATH
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+#export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
+if [ -f /opt/local/etc/bash_completion ]; then
+	      . /opt/local/etc/bash_completion
+fi

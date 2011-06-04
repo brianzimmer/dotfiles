@@ -53,9 +53,12 @@ set wildignore+=*.o,*.obj,.git,*.pyc
 
 " Plugin: Slime
 " -------------
-" TODO: http://technotales.wordpress.com/2007/10/03/like-slime-for-vim/
+" screen -S sessionname in another window
+" Ctrl-c-c to send to this (need to enter sessionname)
+" By default sends the current paragraph, can use visual mode
+" to send something else
+" Ctrl-c v reprompts to reattach to a new session
 "
-
 
 " Plugin: LargeFile
 " -----------------
@@ -259,7 +262,12 @@ set smartcase
 set showmatch
 
 " Show trailing whitespace
-set list listchars=tab:\ \ ,trail:·
+set listchars=tab:\▸\ ,trail:·
+
+" Shortcut to rapidly toggle `set list`
+" ,l shows invisible characters
+nmap <leader>l :set list!<CR>
+
 
 " Turn off backup (trust me to do it correctly)
 set nobackup

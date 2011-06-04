@@ -42,7 +42,6 @@ alias m="more"
 alias mkdir="mkdir -p"
 alias home="cd ~"
 alias lo="logout"
-alias fi="finger"
 alias d="dirs"
 alias v="gvim"
 alias ..="cd .."
@@ -74,7 +73,8 @@ function pp() { my_ps f | awk '!/awk/ && $0~var' var=${1:-".*"} ; }
 
 # Set prompt
 # -----------------------------
-PS1='\[\e]1;`pwdtail`\a\]\n\[\033[0;32m\]\u@\h \[\033[33m\]\w\n\[\033[0m\]> '
+PS1='\[\e]1;`pwdtail`\a\]\n\[\033[0;32m\]\u@\h$(__git_ps1 " (%s)") \[\033[33m\]\w\n\[\033[0m\]> '
+#PS1='\[\e]1;`pwdtail`\a\]\n\[\033[0;32m\]\u@\h \[\033[33m\]\w\n\[\033[0m\]> '
 pwdtail () { #returns the last 2 fields of the working directory
     pwd|awk -F/ '{nlast = NF -1;print $nlast"/"$NF}'
 }
