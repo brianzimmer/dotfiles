@@ -95,6 +95,7 @@ map <leader>cd :cd %:p:h<cr>
 " p to go to parent
 " r to refresh
 let NERDTreeShowBookmarks=1
+let NERDTreeShowHidden=1
 let NERDTreeBookmarksFile="~/.vim/NERDTreeBookmarks"
 map <Leader>d :NERDTreeToggle<CR>
 
