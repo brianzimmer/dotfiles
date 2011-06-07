@@ -11,7 +11,6 @@ export PATH=/tools/mathworks/matlab2009b/etc:/tools/mathworks/matlab2009b/bin/:$
 export MOSEKLM_LICENSE_FILE=/tools/designs/Dcdg/users/sengoon/mosek/6/licenses 
 # home directory bin
 export PATH=~/bin:$PATH
-export PATH=~/install/git/bin:$PATH
 
 # terminal settings
 export EDITOR="gvim"

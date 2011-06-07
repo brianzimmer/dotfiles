@@ -34,7 +34,8 @@ else
 	alias lrt="ls -lrt" # show last recently used
 	alias grep="grep"
 fi
-alias g="git"
+alias g=git 
+complete -o default -o nospace -F _git g
 alias tree="tree -Csu" # See file tree
 alias c="clear"
 alias h="history"
