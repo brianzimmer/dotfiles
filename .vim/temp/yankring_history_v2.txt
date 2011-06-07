@@ -1,3 +1,40 @@
+section: screens        # define the hosts that will be involved here				desktop:				macbookpro:endsection: links        desktop:								left = macbookpro				macbookpro:                right  = desktopendsection: aliases				macbookpro:					# Get this value by running "hostname" in the terminal on the mac					# This might periodically change...					dhcp-63-217.eecs.berkeley.edu				desktop:					sunw2100z-76.eecs.berkeley.edu					# sunw1100z-23.eecs.berkeley.eduend,v
+Brian-Zimmer-Macbook-Pro.local: ,v
+.~/bin/synergys,V
+/,v
+section: screens        # define the hosts that will be involved here        #sunw1100z-23.EECS.Berkeley.EDU:        sunw2100z-76.EECS.Berkeley.EDU:				Brian-Zimmer-Macbook-Pro.local:endsection: links        # my notebook is to the left of the desktop        #sunw1100z-23.EECS.Berkeley.EDU:        sunw2100z-76.EECS.Berkeley.EDU:								left = Brian-Zimmer-Macbook-Pro.local        # my desktop is to the right of the notebook				Brian-Zimmer-Macbook-Pro.local:        #        right  = sunw1100z-23.EECS.Berkeley.EDU                right  = sunw2100z-76.EECS.Berkeley.EDUendsection: aliases				Brian-Zimmer-Macbook-Pro.local: 					dhcp-63-217.eecs.berkeley.eduend,v
+section: screens        # define the hosts that will be involved here				desktop:				macbookpro:endsection: links        desktop:								left = macbookpro				macbookpro:                right  = desktopendsection: aliases				Brian-Zimmer-Macbook-Pro.local: 					# Get this value by running "hostname" in the terminal on the mac					# This might periodically change...					dhcp-63-217.eecs.berkeley.edu				desktop					sunw2100z-76.eecs.berkeley.edu					# sunw1100z-23.eecs.berkeley.eduend,v
+guifont=Bitstream Vera Sans Mono 10,v
+#               shemp,V
+#       curly:,V
+# curly is also known as shemp,V
+				Brian-Zimmer-Macbook-Pro.local:,V
+Brian-Zimmer-Macbook-Pro.local:,v
+        #w8023214agy:,V
+                #left = w8023214agy,V
+#,v
+ ,v
+left = ,v
+								left = Brian-Zimmer-Macbook-Pro.local,V
+				Brian-Zimmer-Macbook-Pro.local,V
+3,v
+2,v
+        #        right  = sunw1100z-23.EECS.Berkeley.EDU,V
+        sunw2100z-76.EECS.Berkeley.EDU:,V
+        #sunw1100z-23.EECS.Berkeley.EDU:,V
+antialias,v
+    <edit name="antialias" mode="assign">      <bool>false</bool>    </edit>,V
+set gfn=ProggyCleanTT:h12:cANSI,v
+  <match target="font">    <test qual="any" name="family">      <string>ProggyCleanTT</string>    </test>    <edit name="antialias" mode="assign">      <bool>false</bool>    </edit>  </match>,v
+else,v
+if [ -f /opt/local/etc/bash_completion ]; then	      . /opt/local/etc/bash_completionfi,V
+n,v
+i,v
+b,v
+if [ -f ~/bin/bashcompletion/bash_completion ]; then	      . ~/bin/bashcompletion/bash_completionfi,V
+if [ -f /opt/local/etc/bash_completion ]; then	      . /opt/local/etc/bash_completionfiif [ -f ~/bin/bashcompletion/bash_completion ]; then	      . ~/bin/bashcompletion/bash_completionfi,V
+# Load bashrc as well to get the rest of my settings# Must be at the bottom so bash completion loaded after pathsif [ -f ~/.bashrc ]; then        . ~/.bashrcfi,V
+/opt/local/etc/bash_completion,v
 # --------------------,V
 ,V
 alias designvision="design_vision-xg -64bit",V
@@ -12,9 +49,7 @@ alias pwd2="cd \`readlink -f .\`",V
 # Mac onlyalias EE="cd ~/Documents/School/EE",V
 # Quicker machine changealias cory="ssh -X -Y cory.eecs.berkeley.edu"alias c199="ssh -X -Y c199.eecs.berkeley.edu"alias bwrc="ssh -X -Y intel2950-4.eecs.berkeley.edu"alias cs250="ssh -X -Y icluster20.eecs.berkeley.edu"alias isis="ssh -X -Y isis-1.eecs.berkeley.edu",V
 /etc/bash_completion,v
-n,v
 o,v
-i,v
 t,v
 e,v
 l,v
@@ -25,8 +60,6 @@ _,v
 h,v
 s,v
 a,v
-b,v
-/,v
 if [ -f /etc/bash_completion ]; then    . /etc/bash_completionfi,V
 " TODO,V
             nmap <leader>gs :Gstatus<cr>            nmap <leader>gc :Gcommit<cr>            nmap <leader>ga :Gwrite<cr>            nmap <leader>gl :Glog<cr>            nmap <leader>gd :Gdiff<cr>,V
@@ -34,7 +67,6 @@ endif,V
     let &statusline='%< %f %{fugitive#statusline()} ... (other stuff)',V
 if exists('*fugitive#statusline'),V
 runtime! bundle/fugitive/autoload/fugitive.vim,V
- ,v
 if has('statusline')        set laststatus=2        " Broken down into easily includeable segments        set statusline=%<%f\   " Filename        set statusline+=%w%h%m%r " Options        set statusline+=%{fugitive#statusline()} "  Git Hotness        "set statusline+=\ [%{&ff}/%Y]            " filetype        set statusline+=\ [%{getcwd()}]          " current dir        "set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char        set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info    endif,V
 runtime! autoload/fugitive.vimif exists('*fugitive#statusline')    let &statusline='%< %f %{fugitive#statusline()} ... (other stuff)'endif,V
 if has('statusline')        set laststatus=2        " Broken down into easily includeable segments        set statusline=%<%f\   " Filename        set statusline+=%w%h%m%r " Options        set statusline+=%{fugitive#statusline()} "  Git Hotness        set statusline+=\ [%{&ff}/%Y]            " filetype        set statusline+=\ [%{getcwd()}]          " current dir        "set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char        set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info    endif,V
@@ -56,7 +88,6 @@ fakeclip.vim,v
 slime.txt,v
 set list listchars=tab:\ \ ,trail:·,v
 testtest,V
-#,v
 alias finder="gnome-open",V
  --color=auto,v
  --color,v
@@ -67,34 +98,3 @@ r,v
 "set backupdir=~/.backup/,V
 "set directory=~/.backup/,V
 set showmode,V
-set hidden,V
-" Turn on auto indentationset autoindent,V
-" Leader shortcuts,V
-		" Something,V
-" noremap <leader>y :CommandTFlush<cr>,V
-" noremap <leader>j :CommandT<cr>,V
-" set wildignore+=*.o,*.obj,.git,*.pyc,V
-" let g:CommandTMaxHeight = 15,V
-" """""""""""""""""""""""""""""",V
-" " => Command-T,V
-" map <leader>f :MRU<CR>,V
-" let MRU_Max_Entries = 400,V
-" => MRU plugin,V
-"""""""""""""""""""""""""""""",V
-set scrolloff=3,V
- <letter> (backtick will return),v
-" ` <letter> (backtick will return),V
-end,V
-	end,V
-		something,V
-	something,V
-for,V
-iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>,V
-02/06/11 13:43:06,v
-02/06/11 13:42:55,V
-02/06/11 13:42:51,V
-map <leader>tc :tabclose<cr>,V
-map <leader>tm :tabmove,V
-",v
-" Plugin: SnipMate  ,V
-" => Command-T,V

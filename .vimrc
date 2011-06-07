@@ -355,3 +355,7 @@ if has('statusline')
 	set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 endif
 
+
+" font
+" set guifont=ProggyCleanTT\ 12
+set guifont=Bitstream\ Vera\ Sans\ Mono\ 10
