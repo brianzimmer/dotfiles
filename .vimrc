@@ -1,6 +1,7 @@
 " Load pathogen to manage plugins
 filetype off
 call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 filetype plugin indent on
 
 " Change the leader key to something easier
@@ -26,12 +27,107 @@ map <leader>f :MRU<CR>
 
 " Plugin: Fugitive
 " ----------------
+" Git:
+" :Git _____ lets you run anything
+" But try not to use
+" eg. :Git log shows the log
+" Aliases, completion is also handled correctly
+
+" Status: 
+" :Gstatus
+" git status
 nmap <leader>gs :Gstatus<cr>
-" Then use "-" to stage it
-nmap <leader>gc :Gcommit<cr>
-nmap <leader>ga :Gwrite<cr>
+	" Press "Enter" to open the file in the window below
+	" Then run Gdiff
+	" Then use "-" to stage it/remove it
+	" Press "p" to add parts of a file
+	" Press "shift-c" to commit
+
+" Old Versions:
+" :Glog
+" run ,gl, then use these [q and ]q to move through
+" then ,ge to return to the top
 nmap <leader>gl :Glog<cr>
+map [q :cprev<cr>
+map ]q :cnext<cr>
+map [Q :cfirst<cr>
+map ]Q :clast<cr>
+nmap <leader>ge :Gedit<cr>
+
+" Other Branches:
+" Edit files in any branch:
+" :Gedit branchname:filename
+" eg. :Gedit master:.vimrc
+" :Gvsplit
+
+" Search:
+" :Ggrep findme
+" :Ggrep findme branchnam
+" Find something taken out during acommit
+" :Glog -S findme --
+
+" Explore:
+" :Gedit HEAD^ (replace HEAD with a specific SHA if desired)
+" Press enter on the tree line to see all files in that commit
+" Press enter on the parent line to go to the parent commit
+" To go back to the top, 
+" :Gedit if get stuck
+nmap <leader>gx :Gedit HEAD^<cr>
+" To go back, use ,gu if inside file tree, Shift-C to go to commit version
+nmap <leader>gu :edit %:h<CR> 
+
+" Commit:
+" :Gcommit
+" git commit
+" Put commit message at the top of the new window
+nmap <leader>gc :Gcommit<cr>
+
+" Add:
+" :Gwrite
+" git add currentfile
+nmap <leader>ga :Gwrite<cr>
+
+" Remove:
+" :Gremove
+" git remove currentfile
+nmap <leader>grm :Gremove<cr>
+
+" Move:
+" :Gmove targetpath (relative to current file location)
+" git mv originalpath destinationpath
+" / is the root of the repo, not the filesystem
+nmap <leader>gm :Gmove<cr>
+
+" Revert:
+" :Gread
+" git checkout currentfile
+nmap <leader>gre :Gread<cr>
+
+" Blame:
+" :Gblame
+" git blame
+nmap <leader>gb :Gblame<cr>
+
+" Log:
+" :Glob
+" git log
+nmap <leader>gl :Glog<cr>
+
+" Diff:
+" :Gdiff
+" git diff
+" Current (working) on the right, what will be committed (stage) on the left
+" :diffget on oneside will move to the other
+" :do (diffobtain)
+" :diffupdate to update colors
+" If do on a merge conflict file, 
+" left: target (probably master)
+" middle: working copy (if we just opened it in an editor)
+" right: merge branch (what we tried to merge in)
 nmap <leader>gd :Gdiff<cr>
+
+autocmd BufReadPost fugitive://* set bufhidden=delete
+
 
 " Plugin: NerdCommenter
 " ---------------------
