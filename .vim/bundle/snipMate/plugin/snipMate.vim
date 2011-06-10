@@ -210,6 +210,16 @@ fun s:ChooseSnippet(scope, trigger)
 	return num == -1 ? '' : s:multi_snips[a:scope][a:trigger][num][1]
 endf
 
+
+fun! GetSnipsInCurrentScope() 
+    let snips = {} 
+    for scope in [bufnr('%')] + split(&ft, '\.') + ['_'] 
+      call extend(snips, get(s:snippets, scope, {}), 'keep') 
+      call extend(snips, get(s:multi_snips, scope, {}), 'keep') 
+    endfor 
+    return snips 
+  endf 
+
 fun! ShowAvailableSnips()
 	let line  = getline('.')
 	let col   = col('.')
@@ -245,3 +255,4 @@ fun! ShowAvailableSnips()
 	return ''
 endf
 " vim:noet:sw=4:ts=4:ft=vim
+"

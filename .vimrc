@@ -4,8 +4,18 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 filetype plugin indent on
 
-" Change the leader key to something easier
+" Change the Leader Key To Something Easier
 let mapleader=","
+
+" Folding
+" zf: fold selection
+" zo: open fold
+" zc: close fold
+" za: toggle folding
+" zm: fold one level
+" zM: fold everything
+" zr: unfold one level
+" zR: unfold everything
 
 " Plugin: SnipMate
 " ----------------
@@ -136,6 +146,10 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 " ,cc comments selected
 " ,cu uncomments selected
 
+" Plugin: Cream-capatilize
+" ------------------------
+map <leader>C 0v$<f5><esc>
+
 " Plugin: Scratch
 " ---------------
 " ,<tab> will open a scratch window
@@ -255,6 +269,9 @@ map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " ,t opens a tab edit command with the path of the currently edited file filled in
 map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+
+" ,s opens the snippet directory
+nnoremap <leader>s <C-w><C-v><C-w><C-w><C-l>:e ~/dotfiles/.vim/bundle/snipMate/snippets/<cr>
 
 " ctrl-p inserts the path of the currently edited file into a command
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
