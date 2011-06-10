@@ -238,8 +238,12 @@ nmap ,yf :let @*=expand("%")<CR>
 " ,yp to copy filename+path to gnome clipboard
 nmap ,yp :let @*=expand("%:p")<CR>
 
-" ,1 creates an underline for a comment
-nnoremap <leader>1 yypllv$r-
+" ,9 creates an underline for a comment
+nnoremap <leader>9 yypllv$r-
+" ,1 makes a markdown header1
+nnoremap <leader>1 yypv$r=
+" ,2 makes a markdown header2
+nnoremap <leader>2 yypv$r-
 
 " ,e opens an edit command with the path of the currently edited file filled in
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
