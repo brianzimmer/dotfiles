@@ -240,10 +240,15 @@ nmap ,yp :let @*=expand("%:p")<CR>
 
 " ,9 creates an underline for a comment
 nnoremap <leader>9 yypllv$r-
+
 " ,1 makes a markdown header1
 nnoremap <leader>1 yypv$r=
+
 " ,2 makes a markdown header2
 nnoremap <leader>2 yypv$r-
+
+" ,i makes an indent
+nnoremap <leader>i i*<space>
 
 " ,e opens an edit command with the path of the currently edited file filled in
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
@@ -400,9 +405,6 @@ set gdefault
 
 " Show filename in window title
 set title
-
-" Ignore case in searches
-set ignorecase
 
 " Make split windows the same width always
 set equalalways
