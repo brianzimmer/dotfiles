@@ -45,11 +45,14 @@ alias home="cd ~"
 alias lo="logout"
 alias d="dirs"
 alias v="gvim"
+alias vim="vim -X"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../../"
 alias path='echo -e ${PATH//:/\\n}'
 alias rgrep="find . -name "*" | xargs grep"
+alias getnx="echo \"export DISPLAY=$DISPLAY\" > ~/.nxdisplay"
+alias setnx="source ~/.nxdisplay"
 # cd then ls
 function cd {
     builtin cd "$@" && ls -F
@@ -65,6 +68,16 @@ function ff() { find . -type f -iname '*'$*'*' -ls ; }
 # List directories
 function lsd() {
     ls -F "$@" | grep \/$
+}
+
+function sar() {
+	ack $1
+	read -p "Replace \"$1\" with \"$2?\" (y or n) " -n 1
+	if [[ ! $REPLY =~ ^[Yy]$ ]]
+	then 
+		exit 1
+	fi
+	ack -l $1 | xargs perl -pi -e "s/$1/$2/g"
 }
 
 
