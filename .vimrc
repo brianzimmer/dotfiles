@@ -444,8 +444,8 @@ set history=1000
 " Setup copy/paste
 " Mirror vim clipboard (eg. yank), with system clipboard
 set clipboard=unnamed
-source $VIMRUNTIME/mswin.vim
-behave mswin
+"source $VIMRUNTIME/mswin.vim
+"behave mswin
 
 " Allow for mouse movement in vim
 if has('mouse')

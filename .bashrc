@@ -48,6 +48,7 @@ alias home="cd ~"
 alias lo="logout"
 alias d="dirs"
 alias v="gvim"
+alias vim="vim -X"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../../"
@@ -56,6 +57,8 @@ alias rgrep="find . -name "*" | xargs grep"
 alias ltspice="wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceIV/scad3.exe"
 alias cs250="ssh-add .ssh/bmzimmer_inst; ssh -X cs250@icluster17.eecs.berkeley.edu"
 alias cs250bz="ssh -X icluster17.eecs.berkeley.edu"
+alias getnx="echo \"export DISPLAY=$DISPLAY\" > ~/.nxdisplay"
+alias setnx="source ~/.nxdisplay"
 # cd then ls
 function cd {
     builtin cd "$@" && ls -F
@@ -71,6 +74,21 @@ function ff() { find . -type f -iname '*'$*'*' -ls ; }
 # List directories
 function lsd() {
     ls -F "$@" | grep \/$
+}
+
+function sar() {
+	ack $1
+	echo -e "\n"
+	read -p "Replace \"$1\" with \"$2?\" (y or n) " -n 1
+	if [[ ! $REPLY =~ ^[Yy]$ ]]
+	then 
+		echo -e"\nNevermind...\n"
+	else
+		echo -e "\n"
+		ack -l $1 | xargs perl -pi -e "s/$1/$2/g"
+		ack $2
+		echo -e "\n"
+	fi
 }
 
 
