@@ -348,6 +348,7 @@ syntax on
 " Known as 'very magic' and it means
 " that only digits and numbers are literals
 " and everything else has a special meaning
+"
 nnoremap / /\v
 vnoremap / /\v
 cnoremap %s/ %s/\v

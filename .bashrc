@@ -14,10 +14,13 @@ fi
 
 # Aliases
 # -------
-
+ssh-add ~/.ssh/bmzimmer_inst
 # Display the real path for pwd
 alias pwd2="cd \`readlink -f .\`"
 alias d="ls -h "
+
+vman() { /usr/bin/man $* | col -b | vim -c 'set ft=man nomod nolist' -; }
+alias man='vman'
 
 if [ $(uname) == "Linux" ]; then
 	alias ls="ls -hF --color" # normal color
@@ -50,6 +53,9 @@ alias ...="cd ../.."
 alias ....="cd ../../../"
 alias path='echo -e ${PATH//:/\\n}'
 alias rgrep="find . -name "*" | xargs grep"
+alias ltspice="wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceIV/scad3.exe"
+alias cs250="ssh-add .ssh/bmzimmer_inst; ssh -X cs250@icluster17.eecs.berkeley.edu"
+alias cs250bz="ssh -X icluster17.eecs.berkeley.edu"
 # cd then ls
 function cd {
     builtin cd "$@" && ls -F
