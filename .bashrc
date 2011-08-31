@@ -72,12 +72,17 @@ function lsd() {
 
 function sar() {
 	ack $1
+	echo -e "\n"
 	read -p "Replace \"$1\" with \"$2?\" (y or n) " -n 1
 	if [[ ! $REPLY =~ ^[Yy]$ ]]
 	then 
-		exit 1
+		echo -e"\nNevermind...\n"
+	else
+		echo -e "\n"
+		ack -l $1 | xargs perl -pi -e "s/$1/$2/g"
+		ack $2
+		echo -e "\n"
 	fi
-	ack -l $1 | xargs perl -pi -e "s/$1/$2/g"
 }
 
 
