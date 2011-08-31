@@ -345,8 +345,12 @@ set nocompatible
 syntax on
 
 " Turn regex to perl/python style
+" Known as 'very magic' and it means
+" that only digits and numbers are literals
+" and everything else has a special meaning
 nnoremap / /\v
 vnoremap / /\v
+cnoremap %s/ %s/\v
 
 " Turn on auto indentation
 set autoindent
