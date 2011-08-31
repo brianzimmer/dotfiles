@@ -395,7 +395,8 @@ set listchars=tab:\▸\ ,trail:·
 " Shortcut to rapidly toggle `set list`
 " ,l shows invisible characters
 nmap <leader>l :set list!<CR>
-
+" Toggle spell checking
+map <Leader>zs :set spell!<CR>
 
 " Turn off backup (trust me to do it correctly)
 set nobackup
@@ -409,6 +410,7 @@ try
 	set undofile
 catch
 endtry
+
 
 " Start scrolling three lines before horizontal border of window.
 set scrolloff=3

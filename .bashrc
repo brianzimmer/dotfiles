@@ -120,10 +120,12 @@ shopt -s no_empty_cmd_completion    # No empty completion
 # Append History instead of overwriting file.
 shopt -s histappend
 # save lots of history
+unset HISTFILESIZE
 export HISTSIZE=100000
+# save history whenever new prompt spit out
+export PROMPT_COMMAND="history -n; history -a"
 # erase duplicates
-export HISTCONTROL=ignoredups:erasedups
-export PROMPT_COMMAND="history -a; history -r; "
+#export HISTCONTROL=ignoredups:erasedups
 
 
 # If start typing a command, then this will
