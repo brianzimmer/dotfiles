@@ -14,7 +14,6 @@ fi
 
 # Aliases
 # -------
-ssh-add ~/.ssh/bmzimmer_inst
 # Display the real path for pwd
 alias pwd2="cd \`readlink -f .\`"
 alias d="ls -h "
@@ -57,6 +56,13 @@ alias rgrep="find . -name "*" | xargs grep"
 alias ltspice="wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceIV/scad3.exe"
 alias cs250="ssh-add .ssh/bmzimmer_inst; ssh -X cs250@icluster17.eecs.berkeley.edu"
 alias cs250bz="ssh -X icluster17.eecs.berkeley.edu"
+alias i16="ssh -X icluster16.eecs.berkeley.edu"
+alias i17="ssh -X icluster17.eecs.berkeley.edu"
+alias i18="ssh -X icluster18.eecs.berkeley.edu"
+alias i19="ssh -X icluster19.eecs.berkeley.edu"
+alias i20="ssh -X icluster20.eecs.berkeley.edu"
+alias i21="ssh -X icluster21.eecs.berkeley.edu"
+alias i22="ssh -X icluster22.eecs.berkeley.edu"
 alias getnx="echo \"export DISPLAY=$DISPLAY\" > ~/.nxdisplay"
 alias setnx="source ~/.nxdisplay"
 # cd then ls

@@ -2,7 +2,7 @@
 # Brian Zimmer, bmzimmer@eecs.berkeley.edu
 
 # Instructional machines
-[[ -e /share/b/bin/instructional.bash_profile ]] && . /share/b/bin/instructional.bash_profile                                                                       
+[[ -e /share/b/bin/instructional.bashrc ]] && . /share/b/bin/instructional.bash_profile                                                                       
 
 
 # Paths (not in bashrc, only want to set once)

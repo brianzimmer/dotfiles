@@ -17,6 +17,10 @@ let mapleader=","
 " zr: unfold one level
 " zR: unfold everything
 
+" Plugin: Align
+" Select in visual mode (shift )
+" Then type :Align = (where = is the seperator of choice)
+
 " Plugin: SnipMate
 " ----------------
 " Edit .vim/snippets/filetype.snippet
@@ -465,6 +469,9 @@ set formatoptions=tcq
 " A tab is 2 spaces
 set tabstop=2 
 set shiftwidth=2
+set expandtab
+" type :retab to expand all of these
+" type ctrl-v tab to get a real tab (,l to show it)
 
 " Colors
 " If using an 8 bit terminal colors will not work, need to
