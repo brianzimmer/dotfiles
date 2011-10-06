@@ -4,4 +4,10 @@
 snippet c)
 	`&enc[:2] == "utf" ? "©" : "(c)"` Copyright `strftime("%Y")` ${1:`g:snips_author`}. All Rights Reserved.${2}
 snippet date
-	`strftime("%Y-%m-%d")`
+	`strftime("%B %d, %Y")`
+snippet brian
+	File: `Filename()`
+	Author: Brian Zimmer (bmzimmer@eecs.berkeley.edu)
+	Created on: `strftime("%B %d, %Y")`
+	Last modified: `strftime("%B %d, %Y")`
+	Description: ${1}
