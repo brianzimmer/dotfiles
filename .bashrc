@@ -138,7 +138,8 @@ export PROMPT_COMMAND="history -n; history -a"
 # If start typing a command, then this will
 # find all commands that start with this
 bind '"\e[A":history-search-backward'
-bind '"\e[B":history-search-forward'
+bind '"\C-l":history-search-backward'
+bind '"\e[B":history-search-backward'
 # Trick: Ctrl-P will go back commands
 # Trick: Ctrl-R will search history
 
