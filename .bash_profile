@@ -2,7 +2,7 @@
 # Brian Zimmer, bmzimmer@eecs.berkeley.edu
 
 # Instructional machines
-[[ -e /share/b/bin/instructional.bashrc ]] && . /share/b/bin/instructional.bash_profile                                                                       
+#[[ -e /share/b/bin/instructional.bashrc ]] && . /share/b/bin/instructional.bash_profile                                                                       
 
 
 # Paths (not in bashrc, only want to set once)
@@ -36,3 +36,8 @@ export CLICOLOR=1
 if [ -f ~/.bashrc ]; then
         . ~/.bashrc
 fi
+
+# Setting PATH for EPD_free-7.1-2
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
+export PATH
