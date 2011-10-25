@@ -459,9 +459,9 @@ if has('mouse')
 endif
 
 " Long lines
-set wrap
-set wm=2
-set textwidth=79
+"set wrap
+"set wm=2
+"set textwidth=79
 "set formatoptions=qrn1
 set formatoptions=tcq
 " Selecting then "gq" will wrap selection

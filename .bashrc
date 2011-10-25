@@ -66,6 +66,7 @@ alias i21="ssh -X icluster21.eecs.berkeley.edu"
 alias i22="ssh -X icluster22.eecs.berkeley.edu"
 alias getnx="echo \"export DISPLAY=$DISPLAY\" > ~/.nxdisplay"
 alias setnx="source ~/.nxdisplay"
+alias en="mailx brianzimmer.120ad@m.evernote.com < "
 # cd then ls
 function cd {
     builtin cd "$@" && ls -F
