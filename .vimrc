@@ -37,7 +37,8 @@ let g:yankring_history_dir = '~/.vim/temp'
 " -----------
 " ,f shows MRU
 let MRU_Max_Entries = 400
-map <leader>f :MRU<CR>
+nmap <leader>f :MRU<CR>
+
 
 " Plugin: Fugitive
 " ----------------
@@ -62,10 +63,10 @@ nmap <leader>gs :Gstatus<cr>
 " run ,gl, then use these [q and ]q to move through
 " then ,ge to return to the top
 nmap <leader>gl :Glog<cr>
-map [q :cprev<cr>
-map ]q :cnext<cr>
-map [Q :cfirst<cr>
-map ]Q :clast<cr>
+nmap [q :cprev<cr>
+nmap ]q :cnext<cr>
+nmap [Q :cfirst<cr>
+nmap ]Q :clast<cr>
 nmap <leader>ge :Gedit<cr>
 
 " Other Branches:
@@ -152,12 +153,12 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " Plugin: Cream-capatilize
 " ------------------------
-map <leader>C 0v$<f5><esc>
+nmap <leader>C 0v$<f5><esc>
 
 " Plugin: Scratch
 " ---------------
 " ,<tab> will open a scratch window
-map <leader><tab> :Sscratch<cr>
+nmap <leader><tab> :Sscratch<cr>
 
 " Plugin: Command-t
 " -----------------
@@ -197,7 +198,7 @@ set wildignore+=*.o,*.obj,.git,*.pyc
 noremap <leader>a :Ack 
 
 " ,cd will switch to the directory of the open buffer
-map <leader>cd :cd %:p:h<cr>
+nmap <leader>cd :cd %:p:h<cr>
 
 
 " Plugin: Nerdtree
@@ -211,7 +212,7 @@ map <leader>cd :cd %:p:h<cr>
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 let NERDTreeBookmarksFile="~/.vim/NERDTreeBookmarks"
-map <Leader>d :NERDTreeToggle<CR>
+nmap <Leader>d :NERDTreeToggle<CR>
 
 
 " Leader shortcuts
@@ -234,13 +235,13 @@ noremap <Leader>v :vsplit<CR>
 noremap <Leader>h :split<CR>
 
 " ,, moves between buffers
-map <Leader>, <C-W>W
+nmap <Leader>, <C-W>W
 
 " Make forward and back easier
 " Shift-j to move a page down
 " Shift-k to move a page up
-map <S-j> <C-F>
-map <S-k> <C-B>
+nmap <S-j> <C-F>
+nmap <S-k> <C-B>
 
 " Move cursor within screen
 " H moves to top
@@ -269,10 +270,10 @@ nnoremap <leader>2 yypv$r-
 nnoremap <leader>i i*<space>
 
 " ,e opens an edit command with the path of the currently edited file filled in
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+nmap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " ,t opens a tab edit command with the path of the currently edited file filled in
-map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+nmap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " ,s opens the snippet directory
 nnoremap <leader>s <C-w><C-v><C-w><C-w><C-l>:e ~/dotfiles/.vim/bundle/snipMate/snippets/<cr>
@@ -286,12 +287,12 @@ vnoremap <tab> %
 
 " Tab configuration
 " ,tn makes a new tab
-map <leader>tn :tabnew<cr>
+nmap <leader>tn :tabnew<cr>
 " ,te edits a file in a new tab
-map <leader>te :tabedit
+nmap <leader>te :tabedit
 
 " 0 moves to beginning of line after tabs, not absolute beginning
-map 0 ^
+nmap 0 ^
 
 " just type xdate
 iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
@@ -302,8 +303,6 @@ iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 " ` <letter> (backtick will return)
 " `. goes to last edited line
 
-" ,, changes from insert to command mode (esc)
-imap ,, <esc>
 
 " ,/ to clear highlights
 nnoremap <leader>/ :noh<cr>
@@ -311,8 +310,8 @@ nnoremap <leader>/ :noh<cr>
 " Tab hotkeys
 " ctrl-h to move to the left
 " ctrl-l to move to the right
-:map <C-h> :tabprev<CR>
-:map <C-l> :tabnext<CR>
+nmap <C-h> :tabprev<CR>
+nmap <C-l> :tabnext<CR>
 
 " ,w writes
 nnoremap <Leader>w :w<CR>
@@ -322,16 +321,16 @@ nnoremap <Leader>q :q<CR>
 nnoremap <Leader>x :wq!<CR>
 
 " ,p toggles paste mode to turn off weird wrapping/commenting
-set pastetoggle=<leader>p
-map <leader>p :set invpaste paste?<CR>
+"set pastetoggle=<leader>p
+nmap <leader>p :set invpaste paste?<CR>
 
 " ,W clears whitespacewn
 noremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " In command mode, enter inserts a newline,
 " Shift-enter inserts above
-map <S-Enter> O<ESC>
-map <Enter> o<ESC>
+nmap <S-Enter> O<ESC>
+nmap <Enter> o<ESC>
 
 " ,v reselects just pasted text
 nnoremap <leader>r V`]
@@ -400,7 +399,7 @@ set listchars=tab:\▸\ ,trail:·
 " ,l shows invisible characters
 nmap <leader>l :set list!<CR>
 " Toggle spell checking
-map <Leader>zs :set spell!<CR>
+nmap <Leader>zs :set spell!<CR>
 
 " Turn off backup (trust me to do it correctly)
 set nobackup
