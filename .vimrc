@@ -313,6 +313,10 @@ nnoremap <leader>/ :noh<cr>
 nmap <C-h> :tabprev<CR>
 nmap <C-l> :tabnext<CR>
 
+" Move between split panes
+nmap <S-h> <C-W>h
+nmap <S-l> <C-W>l
+
 " ,w writes
 nnoremap <Leader>w :w<CR>
 " ,q quits
@@ -323,6 +327,9 @@ nnoremap <Leader>x :wq!<CR>
 " ,p toggles paste mode to turn off weird wrapping/commenting
 "set pastetoggle=<leader>p
 nmap <leader>p :set invpaste paste?<CR>
+
+" Run make with ,m
+nmap <leader>m :!make<CR><CR>
 
 " ,W clears whitespacewn
 noremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
@@ -336,7 +343,7 @@ nmap <Enter> o<ESC>
 nnoremap <leader>r V`]
 
 " Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+noremap <Leader>M mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Vim settings
 " ------------
@@ -352,8 +359,8 @@ syntax on
 " that only digits and numbers are literals
 " and everything else has a special meaning
 "
-nnoremap / /\v
-vnoremap / /\v
+"nnoremap / /\v
+"vnoremap / /\v
 cnoremap %s/ %s/\v
 
 " Turn on auto indentation
