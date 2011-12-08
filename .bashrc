@@ -17,6 +17,8 @@ fi
 # Display the real path for pwd
 alias pwd2="cd \`readlink -f .\`"
 alias d="ls -h "
+alias tpwd="pwd > ~/.tpwd"
+alias tcd="cd `cat ~/.tpwd`"
 
 vman() { /usr/bin/man $* | col -b | vim -c 'set ft=man nomod nolist' -; }
 alias man='vman'
