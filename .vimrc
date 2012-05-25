@@ -31,6 +31,7 @@ let mapleader=","
 " ----------------
 " After a paste, press ctrl-p to cycle through last pastes
 let g:yankring_history_dir = '~/.vim/temp'
+let g:yankring_clipboard_monitor = 1
 " Also allows pasting between windows
 
 " Plugin: MRU
@@ -303,7 +304,6 @@ iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 " ` <letter> (backtick will return)
 " `. goes to last edited line
 
-
 " ,/ to clear highlights
 nnoremap <leader>/ :noh<cr>
 
@@ -316,6 +316,11 @@ nmap <C-l> :tabnext<CR>
 " Move between split panes
 nmap <S-h> <C-W>h
 nmap <S-l> <C-W>l
+nmap <leader>j <C-W>j
+nmap <leader>k <C-W>k
+
+" Hide comments in 
+nmap <leader>c :setlocal foldmethod=syntax<CR>
 
 " ,w writes
 nnoremap <Leader>w :w<CR>

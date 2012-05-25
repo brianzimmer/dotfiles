@@ -17,9 +17,16 @@ fi
 # Display the real path for pwd
 alias pwd2="cd \`readlink -f .\`"
 alias d="ls -h "
+alias tpwd="pwd > ~/.tpwd"
+alias tcd="cd `cat ~/.tpwd`"
 
 vman() { /usr/bin/man $* | col -b | vim -c 'set ft=man nomod nolist' -; }
 alias man='vman'
+
+alias dc='dc_shell-xg-t -64bit -topographical_mode -x "source dc_setup.tcl" '
+alias dcg='dc_shell-xg-t -64bit -topographical_mode -gui -x "source dc_setup.tcl" '
+alias icc='icc_shell -64bit'
+alias iccg='icc_shell -64bit -gui'
 
 if [ $(uname) == "Linux" ]; then
 	alias ls="ls -hF --color" # normal color
@@ -99,6 +106,7 @@ function sar() {
 	fi
 }
 
+alias hs='history | grep -i' 
 
 # See my processes
 function my_ps() { ps $@ -u $USER -o pid,%cpu,%mem,bsdtime,command ; }
@@ -131,7 +139,8 @@ shopt -s histappend
 unset HISTFILESIZE
 export HISTSIZE=100000
 # save history whenever new prompt spit out
-export PROMPT_COMMAND="history -n; history -a"
+#export PROMPT_COMMAND="history -n; history -a"
+export PROMPT_COMMAND="history -a"
 # erase duplicates
 #export HISTCONTROL=ignoredups:erasedups
 

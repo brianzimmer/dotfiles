@@ -23,4 +23,6 @@ augroup filetypedetect
   au! BufRead,BufNewFile *.vg	setfiletype verilog
   au! BufRead,BufNewFile *.vh	setfiletype verilog
   au! BufRead,BufNewFile *.lib	setfiletype none
+  au! BufRead,BufNewFile *.cir	setfiletype spice
+  
 augroup END
