@@ -32,6 +32,7 @@ let mapleader=","
 " After a paste, press ctrl-p to cycle through last pastes
 let g:yankring_history_dir = '~/.vim/temp'
 let g:yankring_clipboard_monitor = 1
+let g:yankring_zap_keys = 'f F t T / ?'
 " Also allows pasting between windows
 
 " Plugin: MRU
@@ -256,7 +257,7 @@ nmap <S-k> <C-B>
 nmap ,yf :let @*=expand("%")<CR>
 
 " ,yp to copy filename+path to gnome clipboard
-nmap ,yp :let @*=expand("%:p")<CR>
+nmap ,yp :let @+=expand("%:p")<CR>
 
 " ,9 creates an underline for a comment
 nnoremap <leader>9 yypllv$r-
@@ -460,7 +461,7 @@ set history=1000
 
 " Setup copy/paste
 " Mirror vim clipboard (eg. yank), with system clipboard
-set clipboard=unnamed
+"set clipboard=unnamed
 "source $VIMRUNTIME/mswin.vim
 "behave mswin
 
@@ -506,4 +507,12 @@ endif
 
 " font
 " set guifont=ProggyCleanTT\ 12
-set guifont=Bitstream\ Vera\ Sans\ Mono\ 10
+"set guifont=Bitstream\ Vera\ Sans\ Mono\ 10
+
+" Nice scrolling if line wrap
+noremap j gj
+noremap k gk
+map \ss :ScreenShell bash<CR>
+map \s :ScreenSend<CR> 
+"let g:ScreenShellGnuScreenVerticalSupport = 'native'
+"let g:ScreenImpl = 'Tmux'
