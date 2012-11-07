@@ -489,7 +489,8 @@ set expandtab
 " If using an 8 bit terminal colors will not work, need to
 " reset the color scheme
 let &t_Co=256
-colorscheme molokai
+"colorscheme molokai
+colorscheme solarized
 
 if has('statusline')
 	set laststatus=2
