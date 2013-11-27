@@ -4,8 +4,16 @@
 # Paths (not in bashrc, only want to set once)
 # -------
 export PATH=~/bin:$PATH
+export PATH=~/bin/tmux/bin:$PATH
+export PATH=~/bin/git-diffall:$PATH
+export LD_LIBRARY_PATH="$HOME/bin/libevent/lib:$LD_LIBRARY_PATH"
 #export PATH=/tools/designs/eeis/BAG/epd_free-7.1-2-rh5-x86_64/bin:$PATH
-export PATH=/tools/designs/Dcdg/users/bmzimmer/install/epd_free-7.1-2-rh5-x86_64/bin:$PATH
+#export PATH=/tools/designs/Dcdg/users/bmzimmer/install/epd_free-7.1-2-rh5-x86_64/bin:$PATH
+#export PATH=/tools/designs/Dcdg/users/bmzimmer/install/Canopy/bin:$PATH
+export VIRTUAL_ENV_DISABLE_PROMPT=1 
+
+# Install enthought`
+source ~bmzimmer/designs/install/Enthought/Canopy/User/bin/activate
 
 # BWRC
 # ----
@@ -15,13 +23,37 @@ export MOSEKLM_LICENSE_FILE=/tools/designs/Dcdg/users/sengoon/mosek/6/licenses
 export LD_LIBRARY_PATH=/tools/designs/Dcdg/users/bmzimmer/install/mosek/6/tools/platform/linux64x86/bin:$LD_LIBRARY_PATH
 #TODO: Need?
 export LD_LIBRARY_PATH=/tools/designs/Dcdg/users/sengoon/lib/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=~bmzimmer/lib:$LD_LIBRARY_PATH
 source /tools/flexlm/flexlm.sh
+
+# Newer versions
+#if [[ `hostname -s` = 'bwrcrdsl*' ]]; then
+  #export PATH=~/bin/vim73_bwrcrdslinstall/bin:$PATH
+#else
+  #export PATH=~/bin/vim73_install/bin:$PATH
+#fi
+
+case $HOSTNAME in
+  bwrcr*)
+    export PATH=~/bin/vim73_bwrcrdslinstall/bin:$PATH ;;
+  bwrcdev*)
+    export PATH=~/bin/vim73_bwrcrdslinstall/bin:$PATH ;;
+  *)
+    export PATH=~/bin/vim73_install/bin:$PATH ;;
+esac
+
+export PATH=~/bin/R2/bin:$PATH
 
 
 # Terminal settings
 export EDITOR="gvim"
 # turn on color
 export CLICOLOR=1
+
+# LSF
+source /tools/support/lsf/conf/profile.lsf
+# LSF for virtuoso
+export LBS_BASE_SYSTEM=LBS_LSF
 
 # Load bashrc as well to get the rest of my settings
 # Must be at the bottom so bash completion loaded after paths

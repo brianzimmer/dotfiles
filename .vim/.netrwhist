@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/scratch/bmzimmer/raven3-chip/vlsi/build/SIGNOFF/EXPORT/Raven3Top_functional_TOP_1v0_bc_m40C_RCmin_CORE_1v0_bc_m40C_RCmin.pt_session'
+let g:netrw_dirhist_2='/tools/designs/Dcdg/users/mgweiner/designs/flexible_ldpc/testing/fpga/opal_kelly_to_ldpc'
+let g:netrw_dirhist_3='/tools/scratch/ianchen/raven2_sram_defect_testing'
+let g:netrw_dirhist_4='/users/bmzimmer/dotfiles/.vim/bundle/fugitive'
+let g:netrw_dirhist_5='/users/bmzimmer/dotfiles/.vim/bundle/vim-slime'

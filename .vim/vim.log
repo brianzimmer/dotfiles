@@ -1,0 +1,249 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.007  000.007: --- VIM STARTING ---
+000.125  000.118: Allocated generic buffers
+000.263  000.138: locale set
+000.281  000.018: GUI prepared
+000.284  000.003: clipboard setup
+000.293  000.009: window checked
+001.057  000.764: inits 1
+001.068  000.011: parsing arguments
+001.070  000.002: expanding arguments
+001.094  000.024: shell init
+001.576  000.482: Termcap init
+001.641  000.065: inits 2
+001.816  000.175: init highlight
+003.032  000.104  000.104: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/ftoff.vim
+003.706  000.259  000.259: sourcing /users/bmzimmer/.vim/autoload/pathogen.vim
+044.772  000.155  000.155: sourcing /users/bmzimmer/.vim/filetype.vim
+073.960  000.207  000.207: sourcing /users/bmzimmer/.vim/bundle/markdown/ftdetect/markdown.vim
+074.643  000.077  000.077: sourcing /users/bmzimmer/.vim/bundle/scala/ftdetect/scala.vim
+076.021  000.545  000.545: sourcing /users/bmzimmer/.vim/bundle/vim-r-plugin/ftdetect/r.vim
+076.197  030.763  029.934: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/filetype.vim
+076.801  000.085  000.085: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/ftplugin.vim
+077.400  000.091  000.091: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/indent.vim
+079.832  000.262  000.262: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/syntax/syncolor.vim
+079.983  000.963  000.701: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/syntax/synload.vim
+080.030  001.547  000.584: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/syntax/syntax.vim
+081.800  000.229  000.229: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/syntax/syncolor.vim
+082.642  000.227  000.227: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/syntax/syncolor.vim
+085.040  004.306  003.850: sourcing /users/bmzimmer/.vim/bundle/solarized/colors/solarized.vim
+085.113  082.604  045.294: sourcing $HOME/.vimrc
+085.120  000.700: sourcing vimrc file(s)
+086.222  000.163  000.163: sourcing /users/bmzimmer/.vim/bundle/ack/plugin/ack.vim
+091.475  003.711  003.711: sourcing /users/bmzimmer/.vim/bundle/align/plugin/AlignMapsPlugin.vim
+091.959  000.164  000.164: sourcing /users/bmzimmer/.vim/bundle/align/plugin/AlignPlugin.vim
+092.816  000.529  000.529: sourcing /users/bmzimmer/.vim/bundle/align/plugin/cecutil.vim
+094.083  000.347  000.347: sourcing /users/bmzimmer/.vim/bundle/capitalize/plugin/cream-capitalization.vim
+095.228  000.172  000.172: sourcing /users/bmzimmer/.vim/bundle/commandt/plugin/command-t.vim
+096.414  000.255  000.255: sourcing /users/bmzimmer/.vim/bundle/emacsmode/plugin/verilog_emacsauto.vim
+100.679  003.317  003.317: sourcing /users/bmzimmer/.vim/bundle/fugitive/plugin/fugitive.vim
+101.843  000.215  000.215: sourcing /users/bmzimmer/.vim/bundle/largefile/plugin/LargeFile.vim
+105.924  003.113  003.113: sourcing /users/bmzimmer/.vim/bundle/mru/plugin/mru.vim
+112.686  005.794  005.794: sourcing /users/bmzimmer/.vim/bundle/nerdcommenter/plugin/NERD_commenter.vim
+117.588  003.899  003.899: sourcing /users/bmzimmer/.vim/bundle/nerdtree/plugin/NERD_tree.vim
+118.738  000.164  000.164: sourcing /users/bmzimmer/.vim/bundle/scratch/plugin/scratch.vim
+119.996  000.291  000.291: sourcing /users/bmzimmer/.vim/bundle/screen/plugin/screen.vim
+121.084  000.108  000.108: sourcing /users/bmzimmer/.vim/bundle/slime/plugin/slime.vim
+122.501  000.499  000.499: sourcing /users/bmzimmer/.vim/bundle/snipMate/plugin/snipMate.vim
+124.343  000.850  000.850: sourcing /users/bmzimmer/.vim/bundle/supertab/plugin/supertab.vim
+125.418  000.151  000.151: sourcing /users/bmzimmer/.vim/bundle/tslime/plugin/tslime.vim
+129.501  000.117  000.117: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/getscriptPlugin.vim
+130.127  000.312  000.312: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/gzip.vim
+130.675  000.219  000.219: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/matchparen.vim
+131.706  000.703  000.703: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/netrwPlugin.vim
+132.084  000.062  000.062: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/rrhelper.vim
+132.441  000.048  000.048: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/spellfile.vim
+133.063  000.305  000.305: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/tarPlugin.vim
+133.518  000.113  000.113: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/tohtml.vim
+134.127  000.300  000.300: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/vimballPlugin.vim
+134.729  000.268  000.268: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/zipPlugin.vim
+135.875  000.141  000.141: sourcing /users/bmzimmer/.vim/bundle/scala/after/plugin/help.vim
+138.829  001.970  001.970: sourcing /users/bmzimmer/.vim/bundle/snipMate/after/plugin/snipMate.vim
+138.876  025.456: loading plugins
+138.900  000.024: inits 3
+140.613  001.713: reading viminfo
+885.920  745.307: setup clipboard
+885.952  000.032: setting raw mode
+885.960  000.008: start termcap
+885.990  000.030: clearing screen
+887.194  001.204: opening buffers
+887.379  000.185: BufEnter autocommands
+887.383  000.004: editing files in windows
+937.024  001.643  001.643: sourcing /users/bmzimmer/.vim/bundle/screen/autoload/screen.vim
+939.769  000.215  000.215: sourcing /users/bmzimmer/.vim/bundle/nerdtree/nerdtree_plugin/exec_menuitem.vim
+940.851  000.723  000.723: sourcing /users/bmzimmer/.vim/bundle/nerdtree/nerdtree_plugin/fs_menu.vim
+941.528  051.564: VimEnter autocommands
+941.531  000.003: before starting main loop
+944.189  002.658: first screen update
+944.192  000.003: --- VIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.007  000.007: --- VIM STARTING ---
+000.124  000.117: Allocated generic buffers
+000.837  000.713: locale set
+000.859  000.022: GUI prepared
+000.863  000.004: clipboard setup
+000.872  000.009: window checked
+002.266  001.394: inits 1
+002.277  000.011: parsing arguments
+002.279  000.002: expanding arguments
+002.303  000.024: shell init
+002.795  000.492: Termcap init
+002.860  000.065: inits 2
+003.039  000.179: init highlight
+004.907  000.106  000.106: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/ftoff.vim
+006.037  000.263  000.263: sourcing /users/bmzimmer/.vim/autoload/pathogen.vim
+062.404  000.156  000.156: sourcing /users/bmzimmer/.vim/filetype.vim
+087.732  000.236  000.236: sourcing /users/bmzimmer/.vim/bundle/markdown/ftdetect/markdown.vim
+088.710  000.089  000.089: sourcing /users/bmzimmer/.vim/bundle/scala/ftdetect/scala.vim
+090.207  000.508  000.508: sourcing /users/bmzimmer/.vim/bundle/vim-r-plugin/ftdetect/r.vim
+090.383  027.089  026.256: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/filetype.vim
+091.229  000.072  000.072: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/ftplugin.vim
+092.124  000.091  000.091: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/indent.vim
+097.131  000.279  000.279: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/syntax/syncolor.vim
+097.523  001.499  001.220: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/syntax/synload.vim
+097.567  003.879  002.380: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/syntax/syntax.vim
+100.752  000.372  000.372: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/syntax/syncolor.vim
+101.974  000.378  000.378: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/syntax/syncolor.vim
+106.237  007.007  006.257: sourcing /users/bmzimmer/.vim/bundle/solarized/colors/solarized.vim
+106.366  102.351  063.688: sourcing $HOME/.vimrc
+106.377  000.987: sourcing vimrc file(s)
+107.989  000.296  000.296: sourcing /users/bmzimmer/.vim/bundle/ack/plugin/ack.vim
+116.760  006.597  006.597: sourcing /users/bmzimmer/.vim/bundle/align/plugin/AlignMapsPlugin.vim
+117.428  000.225  000.225: sourcing /users/bmzimmer/.vim/bundle/align/plugin/AlignPlugin.vim
+118.443  000.551  000.551: sourcing /users/bmzimmer/.vim/bundle/align/plugin/cecutil.vim
+120.047  000.341  000.341: sourcing /users/bmzimmer/.vim/bundle/capitalize/plugin/cream-capitalization.vim
+121.544  000.195  000.195: sourcing /users/bmzimmer/.vim/bundle/commandt/plugin/command-t.vim
+123.160  000.263  000.263: sourcing /users/bmzimmer/.vim/bundle/emacsmode/plugin/verilog_emacsauto.vim
+129.373  004.921  004.921: sourcing /users/bmzimmer/.vim/bundle/fugitive/plugin/fugitive.vim
+130.881  000.186  000.186: sourcing /users/bmzimmer/.vim/bundle/largefile/plugin/LargeFile.vim
+135.194  003.000  003.000: sourcing /users/bmzimmer/.vim/bundle/mru/plugin/mru.vim
+144.735  008.202  008.202: sourcing /users/bmzimmer/.vim/bundle/nerdcommenter/plugin/NERD_commenter.vim
+152.064  005.939  005.939: sourcing /users/bmzimmer/.vim/bundle/nerdtree/plugin/NERD_tree.vim
+153.640  000.218  000.218: sourcing /users/bmzimmer/.vim/bundle/scratch/plugin/scratch.vim
+155.347  000.393  000.393: sourcing /users/bmzimmer/.vim/bundle/screen/plugin/screen.vim
+156.789  000.125  000.125: sourcing /users/bmzimmer/.vim/bundle/slime/plugin/slime.vim
+159.031  000.912  000.912: sourcing /users/bmzimmer/.vim/bundle/snipMate/plugin/snipMate.vim
+161.673  001.290  001.290: sourcing /users/bmzimmer/.vim/bundle/supertab/plugin/supertab.vim
+163.149  000.162  000.162: sourcing /users/bmzimmer/.vim/bundle/tslime/plugin/tslime.vim
+168.724  000.165  000.165: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/getscriptPlugin.vim
+169.554  000.381  000.381: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/gzip.vim
+170.317  000.319  000.319: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/matchparen.vim
+171.856  001.062  001.062: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/netrwPlugin.vim
+172.413  000.095  000.095: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/rrhelper.vim
+172.942  000.073  000.073: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/spellfile.vim
+173.706  000.309  000.309: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/tarPlugin.vim
+174.272  000.105  000.105: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/tohtml.vim
+174.960  000.251  000.251: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/vimballPlugin.vim
+175.673  000.256  000.256: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/zipPlugin.vim
+177.183  000.129  000.129: sourcing /users/bmzimmer/.vim/bundle/scala/after/plugin/help.vim
+180.831  002.312  002.312: sourcing /users/bmzimmer/.vim/bundle/snipMate/after/plugin/snipMate.vim
+180.879  035.229: loading plugins
+180.895  000.016: inits 3
+182.612  001.717: reading viminfo
+182.616  000.004: setup clipboard
+182.642  000.026: setting raw mode
+182.649  000.007: start termcap
+182.677  000.028: clearing screen
+184.464  001.787: opening buffers
+184.661  000.197: BufEnter autocommands
+184.665  000.004: editing files in windows
+189.457  001.610  001.610: sourcing /users/bmzimmer/.vim/bundle/screen/autoload/screen.vim
+192.253  000.214  000.214: sourcing /users/bmzimmer/.vim/bundle/nerdtree/nerdtree_plugin/exec_menuitem.vim
+193.437  000.717  000.717: sourcing /users/bmzimmer/.vim/bundle/nerdtree/nerdtree_plugin/fs_menu.vim
+194.118  006.912: VimEnter autocommands
+194.121  000.003: before starting main loop
+196.759  002.638: first screen update
+196.762  000.003: --- VIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.007  000.007: --- VIM STARTING ---
+000.156  000.149: Allocated generic buffers
+000.299  000.143: locale set
+000.319  000.020: GUI prepared
+000.322  000.003: clipboard setup
+000.331  000.009: window checked
+001.079  000.748: inits 1
+001.089  000.010: parsing arguments
+001.091  000.002: expanding arguments
+001.115  000.024: shell init
+001.594  000.479: Termcap init
+001.659  000.065: inits 2
+001.842  000.183: init highlight
+003.103  000.095  000.095: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/ftoff.vim
+003.775  000.265  000.265: sourcing /users/bmzimmer/.vim/autoload/pathogen.vim
+045.123  000.161  000.161: sourcing /users/bmzimmer/.vim/filetype.vim
+071.410  000.222  000.222: sourcing /users/bmzimmer/.vim/bundle/markdown/ftdetect/markdown.vim
+072.029  000.072  000.072: sourcing /users/bmzimmer/.vim/bundle/scala/ftdetect/scala.vim
+073.110  000.545  000.545: sourcing /users/bmzimmer/.vim/bundle/vim-r-plugin/ftdetect/r.vim
+073.285  027.475  026.636: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/filetype.vim
+073.915  000.097  000.097: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/ftplugin.vim
+074.550  000.089  000.089: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/indent.vim
+077.040  000.295  000.295: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/syntax/syncolor.vim
+077.175  000.980  000.685: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/syntax/synload.vim
+077.217  001.582  000.602: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/syntax/syntax.vim
+078.925  000.244  000.244: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/syntax/syncolor.vim
+079.729  000.202  000.202: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/syntax/syncolor.vim
+082.128  004.221  003.775: sourcing /users/bmzimmer/.vim/bundle/solarized/colors/solarized.vim
+082.202  079.605  044.620: sourcing $HOME/.vimrc
+082.208  000.761: sourcing vimrc file(s)
+083.293  000.191  000.191: sourcing /users/bmzimmer/.vim/bundle/ack/plugin/ack.vim
+088.536  003.712  003.712: sourcing /users/bmzimmer/.vim/bundle/align/plugin/AlignMapsPlugin.vim
+089.025  000.151  000.151: sourcing /users/bmzimmer/.vim/bundle/align/plugin/AlignPlugin.vim
+089.913  000.548  000.548: sourcing /users/bmzimmer/.vim/bundle/align/plugin/cecutil.vim
+091.161  000.306  000.306: sourcing /users/bmzimmer/.vim/bundle/capitalize/plugin/cream-capitalization.vim
+092.298  000.195  000.195: sourcing /users/bmzimmer/.vim/bundle/commandt/plugin/command-t.vim
+093.515  000.264  000.264: sourcing /users/bmzimmer/.vim/bundle/emacsmode/plugin/verilog_emacsauto.vim
+097.745  003.283  003.283: sourcing /users/bmzimmer/.vim/bundle/fugitive/plugin/fugitive.vim
+098.969  000.246  000.246: sourcing /users/bmzimmer/.vim/bundle/largefile/plugin/LargeFile.vim
+102.591  002.720  002.720: sourcing /users/bmzimmer/.vim/bundle/mru/plugin/mru.vim
+112.335  008.708  008.708: sourcing /users/bmzimmer/.vim/bundle/nerdcommenter/plugin/NERD_commenter.vim
+119.727  006.392  006.392: sourcing /users/bmzimmer/.vim/bundle/nerdtree/plugin/NERD_tree.vim
+120.951  000.228  000.228: sourcing /users/bmzimmer/.vim/bundle/scratch/plugin/scratch.vim
+122.308  000.420  000.420: sourcing /users/bmzimmer/.vim/bundle/screen/plugin/screen.vim
+123.372  000.123  000.123: sourcing /users/bmzimmer/.vim/bundle/slime/plugin/slime.vim
+125.124  000.813  000.813: sourcing /users/bmzimmer/.vim/bundle/snipMate/plugin/snipMate.vim
+127.506  001.383  001.383: sourcing /users/bmzimmer/.vim/bundle/supertab/plugin/supertab.vim
+128.652  000.165  000.165: sourcing /users/bmzimmer/.vim/bundle/tslime/plugin/tslime.vim
+132.827  000.179  000.179: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/getscriptPlugin.vim
+133.553  000.391  000.391: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/gzip.vim
+134.246  000.339  000.339: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/matchparen.vim
+135.747  001.141  001.141: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/netrwPlugin.vim
+136.196  000.100  000.100: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/rrhelper.vim
+136.604  000.075  000.075: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/spellfile.vim
+137.263  000.316  000.316: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/tarPlugin.vim
+137.712  000.105  000.105: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/tohtml.vim
+138.301  000.266  000.266: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/vimballPlugin.vim
+138.901  000.262  000.262: sourcing /users/bmzimmer/bin/vim73_install/share/vim/vim73/plugin/zipPlugin.vim
+140.004  000.131  000.131: sourcing /users/bmzimmer/.vim/bundle/scala/after/plugin/help.vim
+142.910  001.874  001.874: sourcing /users/bmzimmer/.vim/bundle/snipMate/after/plugin/snipMate.vim
+142.954  025.719: loading plugins
+142.970  000.016: inits 3
+144.583  001.613: reading viminfo
+144.587  000.004: setup clipboard
+144.609  000.022: setting raw mode
+144.615  000.006: start termcap
+144.642  000.027: clearing screen
+146.090  001.448: opening buffers
+146.273  000.183: BufEnter autocommands
+146.277  000.004: editing files in windows
+150.332  001.622  001.622: sourcing /users/bmzimmer/.vim/bundle/screen/autoload/screen.vim
+152.644  000.214  000.214: sourcing /users/bmzimmer/.vim/bundle/nerdtree/nerdtree_plugin/exec_menuitem.vim
+153.720  000.718  000.718: sourcing /users/bmzimmer/.vim/bundle/nerdtree/nerdtree_plugin/fs_menu.vim
+154.403  005.572: VimEnter autocommands
+154.407  000.004: before starting main loop
+157.042  002.635: first screen update
+157.045  000.003: --- VIM STARTED ---

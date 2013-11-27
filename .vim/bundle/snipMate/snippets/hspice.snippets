@@ -1,0 +1,5 @@
+snippet td
+	.MEASURE pulsewidth TRIG v(read_clk) VAL='vdd/2' RISE=1 TD='(4*2+1)*td' TARG v(dout<0>) VAL='vdd/2' CROSS=1 TD='(4*2+2)*td'
+
+snippet td1
+	.MEASURE pulsewidth TRIG v(read_clk) VAL='vdd/2' RISE=1 TARG v(dout<0>) VAL='vdd/2' CROSS=1

@@ -3,7 +3,7 @@
 #
 
 # If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+#[ -z "$PS1" ] && return
 
 
 # Include local settings
@@ -15,11 +15,23 @@ fi
 # Aliases
 # -------
 # Display the real path for pwd
+alias sram="cd /scratch/bmzimmer/raven3_sram"
+alias sramsim="cd /scratch/bmzimmer/raven3_sram/simulation"
+alias diskspace="du -ch --max-depth=1 ."
+alias ee241ta="ssh -X ee241-ta@icluster9.eecs.berkeley.edu"
+alias ee241="ssh -X ee241@icluster9.eecs.berkeley.edu"
 alias pwd2="cd \`readlink -f .\`"
-alias d="ls -h "
+alias viewgds="calibredrv -dl $DKITROOT/DATA/CALIBRE/calibre_tools/CalibreDrv.layerprops -s /users/bmzimmer/.calibrewb_workspace/wbinit.tcl -m "
+#alias d="ls -h "
 alias tpwd="pwd > ~/.tpwd"
 alias tcd="cd `cat ~/.tpwd`"
-
+alias raven3="source ~/raven3/st28nm_tech_include/sourceme.sh"
+alias r7201="ssh -X bwrcr720-1.eecs.berkeley.edu"
+alias r7202="ssh -X bwrcr720-2.eecs.berkeley.edu"
+alias r7203="ssh -X bwrcr720-3.eecs.berkeley.edu"
+alias r7204="ssh -X bwrcr720-4.eecs.berkeley.edu"
+alias r7205="ssh -X bwrcr720-5.eecs.berkeley.edu"
+alias r7206="ssh -X bwrcr720-6.eecs.berkeley.edu"
 vman() { /usr/bin/man $* | col -b | vim -c 'set ft=man nomod nolist' -; }
 alias man='vman'
 
@@ -52,9 +64,9 @@ alias m="more"
 alias mkdir="mkdir -p"
 alias home="cd ~"
 alias lo="logout"
-alias d="dirs"
+#alias d="dirs"
 alias v="gvim"
-alias vim="vim -X"
+#alias vim="vim -X"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../../"
@@ -74,11 +86,55 @@ alias i22="ssh -X icluster22.eecs.berkeley.edu"
 alias getnx="echo \"export DISPLAY=$DISPLAY\" > ~/.nxdisplay"
 alias setnx="source ~/.nxdisplay"
 alias en="mailx brianzimmer.120ad@m.evernote.com < "
-# cd then ls
-function cd {
-    builtin cd "$@" && ls -F
-}
+alias raven1="cd ~/designs/raven1_sram_defect_testing/opal_kelly/matlab"
 
+
+
+
+
+# Display the stack of directories and prompt
+    # the user for an entry.
+    #
+    # If the user enters 'p', pop the stack.
+    # If the user enters a number, move that
+    # directory to the top of the stack
+    # If the user enters 'q', don't do anything.
+    #
+    function display_stack
+    {
+        dirs -v
+        echo -n "#: "
+        read dir
+        if [[ $dir = 'p' ]]; then
+            pushd > /dev/null
+        elif [[ $dir != 'q' ]]; then
+            d=$(dirs -l +$dir);
+            popd +$dir > /dev/null
+            pushd "$d" > /dev/null
+        fi
+    }
+    alias d=display_stack
+
+    function stack_cd {
+        if [ $1 ]; then
+            # use the pushd bash command to push the directory
+            # to the top of the stack, and enter that directory
+            pushd "$1" > /dev/null
+            ls -F
+        else
+            # the normal cd behavior is to enter $HOME if no
+            # arguments are specified
+            pushd $HOME > /dev/null
+        fi
+    }
+    # the cd command is now an alias to the stack_cd function
+    #
+    alias cd=stack_cd
+
+# cd then ls
+#function cd {
+#    builtin cd "$@" && ls -F
+#}
 
 # Functions
 # ---------
@@ -112,15 +168,18 @@ alias hs='history | grep -i'
 function my_ps() { ps $@ -u $USER -o pid,%cpu,%mem,bsdtime,command ; }
 function pp() { my_ps f | awk '!/awk/ && $0~var' var=${1:-".*"} ; }
 
+#export ztmux_pane=$(tmux show-messages | tail -1 | grep -o 'current pane [0-9]' | sed -e 's/current pane \([0-9]\)/\1/')
+#export ztmux_window=$(tmux show-messages | tail -1 | grep -o '\[[0-9]\] \([0-9]\)' | grep -o '[0-9]$')
 # Set prompt
 # -----------------------------
-PS1='\[\e]1;`pwdtail`\a\]\n\[\033[0;32m\]\u@\h$(__git_ps1 " (%s)") \[\033[33m\]\w\n\[\033[0m\]> '
+PS1='\[\e]1;`pwdtail`\a\]\n\[\033[0;32m\]\u@\h$(__git_ps1 " (%s)") W$(echo $ztmux_window),P$(echo $ztmux_pane) \[\033[33m\]\w\n\[\033[0m\]> '
 #PS1='\[\e]1;`pwdtail`\a\]\n\[\033[0;32m\]\u@\h \[\033[33m\]\w\n\[\033[0m\]> '
 pwdtail () { #returns the last 2 fields of the working directory
     pwd|awk -F/ '{nlast = NF -1;print $nlast"/"$NF}'
 }
 
 export TERM="xterm-256color"
+#export TERM="konsole-256color"
 
 # Bash Options
 shopt -s cdspell                    # autocorrects cd misspellings
@@ -148,10 +207,19 @@ export PROMPT_COMMAND="history -a"
 # If start typing a command, then this will
 # find all commands that start with this
 bind '"\e[A":history-search-backward'
-bind '"\C-l":history-search-backward'
 bind '"\e[B":history-search-backward'
 # Trick: Ctrl-P will go back commands
 # Trick: Ctrl-R will search history
+
+bind '"\C-l":history-search-backward'
+# Ctrl-p: search in previous history
+bind 'Control-l: history-search-backward'
+bind -m vi-insert 'Control-l: history-search-backward'
+bind -m vi-command 'Control-l: history-search-backward'
+bind -m vi-command ".":insert-last-argument
+bind -m vi-insert "\C-a.":beginning-of-line
+bind -m vi-insert "\C-e.":end-of-line
+bind -m vi-insert "\C-w.":backward-kill-word
 
 # Make completion not be case sensitive
 bind 'set completion-ignore-case on'
@@ -162,3 +230,9 @@ bind "set show-all-if-ambiguous on"
 if [ -f ~/dotfiles/bashcompletion/bash_completion ]; then
 			. ~/dotfiles/bashcompletion/bash_completion
 fi
+
+set -o vi
+
+# Added by Canopy installer on 2013-11-26
+# VIRTUAL_ENV_DISABLE_PROMPT can be set to '' to make bashprompt show that Canopy is active, otherwise 1
+VIRTUAL_ENV_DISABLE_PROMPT=1 source /users/bmzimmer/designs/install/Enthought/Canopy/User/bin/activate

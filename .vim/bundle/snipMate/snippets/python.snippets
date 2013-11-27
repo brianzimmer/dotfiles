@@ -1,5 +1,5 @@
 snippet #!
-	#!/usr/bin/python
+	#!/usr/bin/env/python
 
 snippet imp
 	import ${1:module}
@@ -84,3 +84,11 @@ snippet ifmain
 # __magic__
 snippet _
 	__${1:init}__${2}
+snippet readlines
+	f = open(sys.argv[1])
+	lines = map(string.strip,f.readlines())
+	for i,line in enumerate(lines):
+snippet myimports
+	import sys
+	import re
+	import re

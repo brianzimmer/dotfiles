@@ -1,0 +1,15 @@
+snippet clean
+	files_to_rm = $(top_levels) MERGED_*
+	files_to_rm_newlined = $(foreach file,$(files_to_rm),$(file)\n)
+	.gitignore: Makefile
+		printf "$(files_to_rm_newlined)" > .gitignore
+		sed -i -e "s/^ //" .gitignore
+	clean:
+		rm -rf $(files_to_rm)
+	.phony: clean
+
+snippet prefix
+	${1:newvar} = $(addprefix ${2:prefix}, $(${3:oldvar}))
+
+snippet suffix
+	${1:newvar} = $(addsuffix ${2:suffix}, $(${3:oldvar}))

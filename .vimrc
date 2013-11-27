@@ -3,9 +3,12 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 filetype plugin indent on
+:iab <expr> dts strftime("%c")
 
 " Change the Leader Key To Something Easier
 let mapleader=","
+
+let g:EasyMotion_leader_key = ';'
 
 " Folding
 " zf: fold selection
@@ -16,6 +19,17 @@ let mapleader=","
 " zM: fold everything
 " zr: unfold one level
 " zR: unfold everything
+
+" Plugin: vim-slime
+let g:slime_target = "tmux"
+let g:slime_paste_file = "$HOME/.slime_paste"
+" let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
+let g:slime_no_mappings = 1
+xmap <leader>z <Plug>SlimeRegionSend
+nmap <leader>z <Plug>SlimeMotionSend
+nmap <leader>zz <Plug>SlimeLineSend
+nmap <leader>g :SlimeSend1 run -i <c-r>=expand('%:t')<CR><CR>
+
 
 " Plugin: Align
 " Select in visual mode (shift )
@@ -30,10 +44,39 @@ let mapleader=","
 " Plugin: YankRing
 " ----------------
 " After a paste, press ctrl-p to cycle through last pastes
-let g:yankring_history_dir = '~/.vim/temp'
-let g:yankring_clipboard_monitor = 1
-let g:yankring_zap_keys = 'f F t T / ?'
+"let g:yankring_history_dir = '~/.vim/temp'
+"let g:yankring_clipboard_monitor = 1
+"let g:yankring_zap_keys = 'f F t T / ?'
 " Also allows pasting between windows
+" Quick yanking to the end of the line
+"nnoremap Y y$
+
+" Yank/paste to the OS clipboard with ,y and ,p
+nnoremap Y "+y
+nnoremap P "+p
+"nnoremap <leader>P "+P
+
+" YankRing stuff
+"nnoremap <leader>r :YRShow<CR>
+
+" Search for things with slashes
+
+""-----=-------=-------=-------=-------=-------=-------=-------= 
+" multi line search selection literal (vi6.2 ok) :help c_<C-R> 
+vmap * y/\V<C-R><C-R>=substitute(escape(@",'\/'),'\n','\ 
+\n','g')<cr><cr> 
+"      ||| |         |                  |   |     |    |     +flag 
+" g=all 
+"      ||| |         |                  |   |     |    +regex=<cr> 
+"      ||| |         |                  |   |     +<cr> 
+"      ||| |         |                  |   +escape / 
+"      ||| |         |                  +contents of register 
+"      ||| |         +expression register 
+"      ||| +insert contents of expression register = LITERALLY 
+"      ||+"very nomagic", only \ is magic 
+"      |+search 
+"      +yank selected text into register " 
+""-----=-------=-------=-------=-------=-------=-------=-------= 
 
 " Plugin: MRU
 " -----------
@@ -324,7 +367,7 @@ nmap <leader>k <C-W>k
 nmap <leader>c :setlocal foldmethod=syntax<CR>
 
 " ,w writes
-nnoremap <Leader>w :w<CR>
+" nnoremap <Leader>w :w<CR>
 " ,q quits
 nnoremap <Leader>q :q<CR>
 " ,x writes and quits
@@ -461,8 +504,9 @@ set history=1000
 
 " Setup copy/paste
 " Mirror vim clipboard (eg. yank), with system clipboard
-"set clipboard=unnamed
+" set clipboard=unnamedplus
 "source $VIMRUNTIME/mswin.vim
+set clipboard=autoselect,exclude:.* 
 "behave mswin
 
 " Allow for mouse movement in vim
@@ -488,9 +532,12 @@ set expandtab
 " Colors
 " If using an 8 bit terminal colors will not work, need to
 " reset the color scheme
-let &t_Co=256
+"let t_Co=256
+"let t_Co=16
+"let g:solarized_termcolors=256
 "colorscheme molokai
 colorscheme solarized
+"set background=light
 
 if has('statusline')
 	set laststatus=2
@@ -517,3 +564,11 @@ map \ss :ScreenShell bash<CR>
 map \s :ScreenSend<CR> 
 "let g:ScreenShellGnuScreenVerticalSupport = 'native'
 "let g:ScreenImpl = 'Tmux'
+"
+"
+" Search for things with slashes
+command! -nargs=1 Ss let @/ = <q-args>
+" v to select, then y, then Ctrl-R 0 to paste
+autocmd BufWinEnter * if line2byte(line("$") + 1) > 1000000 | syntax clear | endif
+
+au BufRead,BufNewFile *.sp.py   setfiletype hspice
